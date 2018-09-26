@@ -3,7 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ultimate-accordion',
-    podModulePrefix: 'ultimate-accordion/pods',
+    podModulePrefix: 'ultimate-accordion/ui',
     environment,
     rootURL: '/',
     locationType: 'auto',
