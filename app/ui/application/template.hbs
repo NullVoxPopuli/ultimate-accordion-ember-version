@@ -1,1 +1,13 @@
-<Accordion />
+<div style='
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 350px;
+  width: 500px;
+  padding: 20px;
+  font-size: 24px;
+'>
+  <div>
+    <strong>Standard</strong>
+    <Standard @items={{model.items}} />
+  </div>
+</div>
