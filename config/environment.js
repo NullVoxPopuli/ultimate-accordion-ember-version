@@ -2,7 +2,8 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'ultimate-accordian-ember-version',
+    modulePrefix: 'ultimate-accordion',
+    podModulePrefix: 'ultimate-accordion/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

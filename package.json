@@ -1,8 +1,8 @@
 {
-  "name": "ultimate-accordian-ember-version",
+  "name": "ultimate-accordion",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for ultimate-accordian-ember-version goes here",
+  "description": "Small description for ultimate-accordion goes here",
   "repository": "",
   "license": "MIT",
   "author": "",
@@ -20,6 +20,14 @@
   "devDependencies": {
     "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.3",
+    "@types/ember": "^3.0.20",
+    "@types/ember-data": "^3.0.2",
+    "@types/ember-qunit": "^3.4.1",
+    "@types/ember-test-helpers": "^1.0.2",
+    "@types/ember-testing-helpers": "0.0.3",
+    "@types/ember__test-helpers": "^0.7.3",
+    "@types/qunit": "^2.5.3",
+    "@types/rsvp": "^4.0.2",
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.1.0",
     "ember-cli": "~3.4.2",
@@ -33,6 +41,7 @@
     "ember-cli-qunit": "^4.3.2",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.1",
+    "ember-cli-typescript": "^1.4.3",
     "ember-cli-uglify": "^2.1.0",
     "ember-data": "~3.4.0",
     "ember-export-application-global": "^2.0.0",
@@ -43,7 +52,8 @@
     "ember-welcome-page": "^3.2.0",
     "eslint-plugin-ember": "^5.2.0",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.7.1"
+    "qunit-dom": "^0.7.1",
+    "typescript": "^3.0.3"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
