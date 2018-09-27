@@ -1,0 +1,6 @@
+.contents {
+  max-height: 0;
+}
+.contents.open {
+  max-height: 130px;
+}

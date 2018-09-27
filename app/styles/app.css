@@ -27,16 +27,3 @@ button.is-open {
   background-color: '#d9d9d9';
 }
 
-.contents {
-  max-height: 0;
-}
-.contents.open {
-  max-height: 130px;
-}
-
-.item {
-  display: grid;
-  grid-template: 'auto auto';
-  grid-gap: 4px;
-  grid-auto-flow: row;
-}
