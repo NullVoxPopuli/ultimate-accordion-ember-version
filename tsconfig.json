@@ -29,7 +29,8 @@
       "*": [
         "types/*"
       ]
-    }
+    },
+    "experimentalDecorators": true
   },
   "include": [
     "app/**/*",

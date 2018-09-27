@@ -1,17 +1,22 @@
 import Component from '@ember/component';
+import { action } from '@ember-decorators/object';
 
 export default class extends Component {
-  openIndexes = [];
+  openIndexes: number[] = [];
 
-  onItemClick(index) {
+  @action
+  onItemClick(index: number) {
+    const currentIndexes = this.openIndexes || [];
     let newIndexes;
 
-    if (newIndexes.includes(index)) {
-      newIndexes = this.openIndexes.filter(i => i !== index);
+    if (currentIndexes.includes(index)) {
+      newIndexes = currentIndexes.filter(i => i !== index);
     } else {
-      newIndexes = [...this.openIndexes, index];
+      newIndexes = [...currentIndexes, index];
     }
 
+    console.log('before', this.openIndexes);
     this.set('openIndexes', newIndexes);
+    console.log('after', this.openIndexes);
   }
 }
