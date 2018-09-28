@@ -57,6 +57,7 @@
     "eslint-plugin-ember": "^5.2.0",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.7.1",
+    "sparkles-component": "^1.1.0",
     "typescript": "^3.0.3"
   },
   "engines": {

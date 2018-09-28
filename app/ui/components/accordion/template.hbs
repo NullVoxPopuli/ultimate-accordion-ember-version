@@ -1,4 +1,4 @@
-{{yield (hash
-  open=this.openIndexes
-  onClick=this.onItemClick
-)}}
+{{yield 
+  this.openIndexes
+  (action this.onItemClick)
+}}
