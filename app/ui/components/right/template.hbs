@@ -1,0 +1,30 @@
+<Accordion as |openIndexes onItemClick|>
+  <div>
+    {{#each @items key='title' as |item index|}}
+    
+      <Item style='grid-auto-flow: column;'>
+
+        <Button 
+          style='text-align: left; min-width: 80px;'
+          class={{if (contains index openIndexes) 'is-open'}}
+          @onClick={{action onItemClick index}}
+        >
+          <span>{{if (contains index openIndexes) '👉' '👈'}}</span>
+
+          {{item.title}}
+        </Button>
+
+        <Contents 
+          style='
+            overflow-y: hidden; 
+            text-align: justify;
+            {{if (contains index openIndexes) 'max-height: 130px'}}
+          '>
+          {{item.contents}}
+        </Contents>
+
+      </Item>
+
+    {{/each}}
+  </div>
+</Accordion>

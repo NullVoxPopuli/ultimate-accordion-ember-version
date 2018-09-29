@@ -9,7 +9,8 @@ const themeProperties = [
   'bg-color',
   'color',
   'focus-bg-color',
-  'open-bg-color'
+  'open-bg-color',
+  'button-bg-color'
 ]
 
 export default class ThemeService extends Service {
@@ -28,12 +29,12 @@ export default class ThemeService extends Service {
   }
 
   private updateDocumentTheme(theme: Theme) {
-    const style = document.documentElement.style;
+    const existing = getComputedStyle(document.documentElement);
 
     themeProperties.forEach(propertyName => {
-      const themeProp = style.getPropertyValue(`--${theme}-${propertyName}`);
+      const themeProp = existing.getPropertyValue(`--${theme}-${propertyName}`);
 
-      style.setProperty(`--${propertyName}`, themeProp);
+      document.documentElement.style.setProperty(`--${propertyName}`, themeProp);
     });
   }
 }

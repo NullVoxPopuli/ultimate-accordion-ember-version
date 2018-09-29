@@ -1,40 +1,43 @@
 :root {
   --dark-bg-color: #222;
   --dark-color: #eee;
+  --dark-button-bg-color: #666666;
   --dark-button-focus-bg-color: #666666;
   --dark-button-open-bg-color: #444444;
 
-  --light-bg-color: #222;
-  --light-color: #eee;
+  --light-bg-color: white;
+  --light-color: black;
+  --light-button-bg-color: #dddddd;
   --light-button-focus-bg-color: #c9c9c9;
   --light-button-open-bg-color: #d9d9d9;
 
   --bg-color: var(--light-bg-color);
   --color: var(--light-color);
+  --button-bg-color: var(--light-button-bg-color);
   --button-focus-bg-color: var(--light-button-focus-bg-color);
   --button-open-bg-color: var(--light-button-open-bg-color);
 }
 
-:root {
-  --dark-bg-color: #222;
-  --dark-color: #eee;
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  
+  background: var(--bg-color);
+  color: var(--color);
 }
 
-.dark {
-  background: var(--bg-color);
-  color: var(---color);
-}
 
 button {
-  text-align: center;
   cursor: pointer;
   flex: 1;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 0;
   font-size: 20px;
   border: none;
   width: 100%;
   display: block;
+  background: var(--button-bg-color);
 }
 
 button:focus {
