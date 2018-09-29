@@ -1,0 +1,12 @@
+.item {
+  position: absolute;
+  overflow-y: hidden;
+
+  opacity: 0;
+  bottom: 30;
+}
+
+.is-open {
+  opacity: 1;
+  bottom: 0;
+}

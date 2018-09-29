@@ -48,4 +48,3 @@ button:focus {
 button.is-open {
   background-color: var(--button-open-bg-color);
 }
-

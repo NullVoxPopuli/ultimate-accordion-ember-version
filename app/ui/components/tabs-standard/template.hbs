@@ -1,0 +1,24 @@
+<Tabs as |openIndexes onItemClick|>
+  <div style='display: flex;'>
+
+    {{#each @items key='title' as |item index|}}
+      <Button 
+        style='text-align: left; min-width: 80px;'
+        class={{if (contains index openIndexes) 'is-open'}}
+        @onClick={{action onItemClick index}}
+      >
+        {{item.title}}
+      </Button>
+    {{/each}}
+
+  </div>
+  <div style='position: relative; min-height: 120px'>
+
+    {{#each @items key='title' as |item index|}}
+      <TabBelowItem @isOpen={{contains index openIndexes}}>
+        {{item.contents}}
+      </TabBelowItem>
+    {{/each}}
+
+  </div>
+</Tabs>
