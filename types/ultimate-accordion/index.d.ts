@@ -8,3 +8,12 @@ declare global {
 
 export {};
 
+
+export interface IState {
+  openIndexes: number[];
+}
+
+export interface IChanges {
+  type: string;
+  openIndexes: number[];
+}

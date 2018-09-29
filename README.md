@@ -1,7 +1,11 @@
 # ultimate-accordion
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This repo implements a bunch of React patterns in ember:
+
+React: https://codesandbox.io/s/924217jvro
+ - Patterns: https://gist.github.com/isaacplmann/aefeb31d2c47585dbffda60c48ae41b7
+Angular: https://codesandbox.io/s/3rlp53mq9m
+ - Patterns: https://gist.github.com/isaacplmann/66b4442c387cae43a5c0deab7853ef59
 
 ## Prerequisites
 

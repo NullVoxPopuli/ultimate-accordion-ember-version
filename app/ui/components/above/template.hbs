@@ -1,28 +1,28 @@
 <Accordion as |openIndexes onItemClick|>
-  <div>
-    {{#each @items key='title' as |item index|}}
-    
-      <Item>
-        <Contents 
-          style='
-            overflow-y: hidden; 
-            text-align: justify;
-            {{if (contains index openIndexes) 'max-height: 130px'}}
-          '>
-          {{item.contents}}
-        </Contents>
 
-        <Button 
-          style='text-align: left; min-width: 80px;'
-          class={{if (contains index openIndexes) 'is-open'}}
-          @onClick={{action onItemClick index}}
-        >
-          {{item.title}}
-          <span>{{if (contains index openIndexes) '👆' '👉'}}</span>
-        </Button>
+  {{#each @items key='title' as |item index|}}
+  
+    <Item>
+      <Contents 
+        style='
+          overflow-y: hidden; 
+          text-align: justify;
+          {{if (contains index openIndexes) 'max-height: 130px'}}
+        '>
+        {{item.contents}}
+      </Contents>
 
-      </Item>
+      <Button 
+        style='text-align: left; min-width: 80px;'
+        class={{if (contains index openIndexes) 'is-open'}}
+        @onClick={{action onItemClick index}}
+      >
+        {{item.title}}
+        <span>{{if (contains index openIndexes) '👆' '👉'}}</span>
+      </Button>
 
-    {{/each}}
-  </div>
+    </Item>
+
+  {{/each}}
+
 </Accordion>

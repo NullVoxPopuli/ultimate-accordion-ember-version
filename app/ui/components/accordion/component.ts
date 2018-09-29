@@ -1,43 +1,50 @@
-// import Component from '@ember/component';
 import Component, { tracked } from "sparkles-component";
+import { IState, IChanges } from "ultimate-accordion";
 
-// import { action } from '@ember-decorators/object';
 
-export default class extends Component {
-  @tracked openIndexes = [0];
+type ChangesFunction = (state: IState) => IChanges;
+type ChangesObjectOrFunction =
+  | IChanges
+  | ChangesFunction;
 
-  onItemClick(index: number) {
-    const currentIndexes = this.openIndexes || [0];
-    let newIndexes;
-
-    if (currentIndexes.includes(index)) {
-      newIndexes = currentIndexes.filter(i => i !== index);
-    } else {
-      newIndexes = [...currentIndexes, index];
-    }
-
-    console.log('before', this.openIndexes);
-    this.openIndexes = newIndexes;
-    console.log('after', this.openIndexes);
-  }
+interface IProps {
+  stateReducer: (state: IState, changes?: IChanges) => IChanges;
 }
 
-// export default class extends Component {
-//   openIndexes: number[] = [0];
+const defaultReducer = (_state: IState, changes?: any) => changes;
 
-//   @action
-//   onItemClick(index: number) {
-//     const currentIndexes = this.openIndexes || [0];
-//     let newIndexes;
+export default class extends Component<IProps> {
+  @tracked openIndexes = [0];
 
-//     if (currentIndexes.includes(index)) {
-//       newIndexes = currentIndexes.filter(i => i !== index);
-//     } else {
-//       newIndexes = [...currentIndexes, index];
-//     }
+  get stateReducer() {
+    return this.args.stateReducer || defaultReducer;
+  }
 
-//     console.log('before', this.openIndexes);
-//     this.set('openIndexes', newIndexes);
-//     console.log('after', this.openIndexes);
-//   }
-// }
+  onStateChange = (_changes: IState) => {};
+
+  onItemClick(index: number) {
+    this.internalUpdate((state: IState) => {
+      const closing = this.openIndexes.includes(index);
+
+      return {
+        type: closing ? 'closing' : 'opening',
+        openIndexes: closing
+          ? state.openIndexes.filter(i => i !== index)
+          : [...state.openIndexes, index]
+      }
+    });
+  }
+
+  private internalUpdate(changes: ChangesObjectOrFunction, callback = () => {}) {
+    const openIndexes = this.openIndexes;
+    const changeObject = 
+      typeof changes === 'function' ? changes({ openIndexes }) : changes;
+
+    const allChanges = this.stateReducer.call(this, { openIndexes }, changeObject);
+
+    this.openIndexes = allChanges.openIndexes;
+
+    this.onStateChange(allChanges);
+    callback();
+  }
+}

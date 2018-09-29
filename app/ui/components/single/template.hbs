@@ -1,16 +1,16 @@
-<Accordion as |openIndexes onItemClick|>
+{{log this.single}}
+<Accordion @stateReducer={{this.single}} as |openIndexes onItemClick|>
 
   {{#each @items key='title' as |item index|}}
-    <Item style='grid-auto-flow: column;'>
 
+    <Item>
       <Button 
         style='text-align: left; min-width: 80px;'
         class={{if (contains index openIndexes) 'is-open'}}
         @onClick={{action onItemClick index}}
       >
-        <span>{{if (contains index openIndexes) '👉' '👈'}}</span>
-
         {{item.title}}
+        <span>{{if (contains index openIndexes) '👇' '👉'}}</span>
       </Button>
 
       <Contents 
@@ -23,6 +23,7 @@
       </Contents>
 
     </Item>
+
   {{/each}}
 
 </Accordion>
