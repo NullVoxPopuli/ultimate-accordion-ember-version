@@ -8,9 +8,9 @@ export enum Theme {
 const themeProperties = [
   'bg-color',
   'color',
-  'focus-bg-color',
-  'open-bg-color',
-  'button-bg-color'
+  'button-bg-color',
+  'button-focus-bg-color',
+  'button-active-bg-color',
 ]
 
 export default class ThemeService extends Service {

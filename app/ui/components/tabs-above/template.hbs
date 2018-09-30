@@ -2,7 +2,9 @@
    <div style='position: relative; min-height: 120px'>
     {{#each @items key='title' as |item index|}}
 
-      <TabItem @isOpen={{contains index openIndexes}}>
+      <TabItem 
+        style='position: absolute; overflow-y: hidden;'
+        @isOpen={{contains index openIndexes}}>
         {{item.contents}}
       </TabItem>
 
@@ -10,11 +12,9 @@
   </div>
 
   <div style='display: flex;'>
-
     {{#each @items key='title' as |item index|}}
 
       <Button 
-        style='text-align: left; min-width: 80px;'
         @isActive={{contains index openIndexes}}
         @onClick={{action onItemClick index}}
       >
@@ -22,6 +22,5 @@
       </Button>
 
     {{/each}}
-
   </div>
 </Tabs>

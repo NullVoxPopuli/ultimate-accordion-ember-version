@@ -1,6 +1,8 @@
 .contents {
   max-height: 0;
+  overflow-y: hidden;
+  text-align: justify;
 }
-.contents.open {
+.is-open {
   max-height: 130px;
 }
