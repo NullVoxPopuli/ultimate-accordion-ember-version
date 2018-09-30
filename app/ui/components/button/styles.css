@@ -1,0 +1,20 @@
+
+.button {
+  cursor: pointer;
+  flex: 1;
+  padding: 10px 0;
+  font-size: 20px;
+  border: none;
+  width: 100%;
+  display: block;
+  background: var(--button-bg-color);
+}
+
+.button:focus {
+  outline: none;
+  background-color: var(--button-focus-bg-color);
+}
+
+.is-active {
+  background-color: var(--button-open-bg-color);
+}

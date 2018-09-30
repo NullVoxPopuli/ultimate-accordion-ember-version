@@ -1,7 +1,18 @@
 <Tabs as |openIndexes onItemClick|>
+   <div style='position: relative; min-height: 120px'>
+    {{#each @items key='title' as |item index|}}
+
+      <TabItem @isOpen={{contains index openIndexes}}>
+        {{item.contents}}
+      </TabItem>
+
+    {{/each}}
+  </div>
+
   <div style='display: flex;'>
 
     {{#each @items key='title' as |item index|}}
+
       <Button 
         style='text-align: left; min-width: 80px;'
         @isActive={{contains index openIndexes}}
@@ -9,15 +20,7 @@
       >
         {{item.title}}
       </Button>
-    {{/each}}
 
-  </div>
-  <div style='position: relative; min-height: 120px'>
-
-    {{#each @items key='title' as |item index|}}
-      <TabItem @isOpen={{contains index openIndexes}}>
-        {{item.contents}}
-      </TabItem>
     {{/each}}
 
   </div>
